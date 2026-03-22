@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: vinaybhosle/agentstamp@main
+      - uses: vinaybhosle/agentstamp/action@main
         id: trust
         with:
           wallet-address: ${{ secrets.WALLET_ADDRESS }}
