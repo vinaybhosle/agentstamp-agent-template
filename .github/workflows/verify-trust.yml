@@ -1,0 +1,27 @@
+name: Verify Agent Trust
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: vinaybhosle/agentstamp@main
+        id: trust
+        with:
+          wallet-address: ${{ secrets.WALLET_ADDRESS }}
+          min-score: 30
+          fail-on-error: true
+          generate-badge: true
+
+      - name: Trust Result
+        run: |
+          echo "Score: ${{ steps.trust.outputs.score }}"
+          echo "Tier: ${{ steps.trust.outputs.tier }}"
+          echo "Trusted: ${{ steps.trust.outputs.trusted }}"

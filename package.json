@@ -1,0 +1,25 @@
+{
+  "name": "my-trusted-agent",
+  "version": "0.1.0",
+  "description": "A trust-verified AI agent powered by AgentStamp",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test tests/",
+    "verify": "node src/verify.js"
+  },
+  "keywords": [
+    "ai-agent",
+    "agentstamp",
+    "trust-verification",
+    "x402",
+    "mcp"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "agentstamp-verify": "^1.0.0",
+    "express": "^4.18.0"
+  },
+  "devDependencies": {}
+}
